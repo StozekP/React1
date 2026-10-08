@@ -1,32 +1,22 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-function TodoForm({ onAddTask }) {
-  const [text, setText] = useState("")
-
-  const handleAdd = () => {
-    if (text.trim() === "") {
-      alert("Ziomek wpisz cos synku")
-    } else {
-      onAddTask(text)
-      setText("")
-    }
-  }
-
-  return (
-    <div>
-      <input
-        value={text}
-        onChange={(event) => setText(event.target.value)}
-        placeholder="Wpisz zadanie..."
-      />
-
-      <button onClick={handleAdd}>
-        Dodaj
-      </button>
-
-      <p>Wpisujesz: {text}</p>
-    </div>
-  )
+function TodoForm({ setTodos }) {
+    const [value, setValue] = useState(' ');
+    return (
+        <div>
+          <input 
+            placeholder='Wpisz zadanie...'
+            value = {value}
+            onChange = {e => setValue(e.target.value)} 
+            />
+            <button
+            onClick={() => {
+                setTodos(prevTodos => [...prevTodos , value]);
+                setValue(' ');
+            }}>
+            Dodaj
+            </button>
+        </div>
+    );
 }
-
 export default TodoForm;

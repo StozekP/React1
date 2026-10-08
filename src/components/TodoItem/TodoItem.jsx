@@ -1,10 +1,9 @@
-function TodoItem({ text }) {
+const TodoItem = ({ text }) => {
   return (
     <div>
-      <input type="checkbox" />
+      <input type='checkbox' />
       <span>{text}</span>
     </div>
-  )
+  );
 }
-
 export default TodoItem;

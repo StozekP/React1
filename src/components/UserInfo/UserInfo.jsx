@@ -1,12 +1,10 @@
-const UserInfo = ({ name }) => {
-  const age = 10;
-
+const UserInfo = ({ name, age }) => {
   return (
-    <selection>
+    <section>
       <h2>Cześć, {name}!</h2>
-      <p>Masz tyle wiosen: {age}!</p>
-      <p>Za rok bedziesz miec tyle wiosen: {age + 1} synku</p>
-    </selection>
+      <p>Masz {age} lat.</p>
+      <p>Za rok będziesz mieć {age + 1} lat.</p>
+    </section>
   );
 };
 
